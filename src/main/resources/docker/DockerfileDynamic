@@ -1,0 +1,17 @@
+FROM java
+MAINTAINER augustwei
+ENV JAVA_OPTS=""
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","data/sharedCar-0.0.1-SNAPSHOT.jar"]
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# 执行命令
+# docker build -t sharedcar .
+
+#使用外部的docker镜像和配置文件
+# docker run --name sharedCar -it -v /docker/java/sharedCar/:/data -v /docker/java/sharedCar/application.properties:/application.properties -v /docker/java/sharedCar/logs:/logs -p 9008:9008 -p 9009:9009 --restart=always -d sharedcar 
+
+#建议使用版本
+
+
+
+# docker run --name sharedCar -it -v /docker/java/sharedCar/:/data -v /docker/java/sharedCar/application.properties:/application.properties -v /docker/java/sharedCar/logs:/logs -p 9008:9008 -p 9009:9009 -d sharedcar 
