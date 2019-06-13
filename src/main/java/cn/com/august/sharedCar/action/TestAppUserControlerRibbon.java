@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api_data_rest/test_app_user")
+@RequestMapping("/shacar/test_app_user")
 public class TestAppUserControlerRibbon {
 	 @Autowired
 	 RestTemplate restTemplate;

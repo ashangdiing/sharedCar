@@ -20,5 +20,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
  
 
-#使用docker镜像内部的jar和配置文件
-# docker run --name sharedCarInner -it -v /docker/java/sharedCar/logs:/logs -v /docker/java/sharedCar/application.properties:/application.properties -p 9008:9008 -p 9009:9009 --restart=always -d sharedcar 
+# --hostname ：指定hostname;
+# --net : 指定网络模式
+# --ip：指定IP
+# --add-host ：指定往/etc/hosts添加的host。格式 --add-host hadoop2:192.168.10.32
+#使用外部的docker镜像和配置文件。
+# docker run --network=host --name sharedCarInner -it -v /docker/java/sharedCar/logs:/logs -v /docker/java/sharedCar/application.properties:/application.properties -p 9008:9008 -p 9009:9009 --restart=always -d sharedcar 
