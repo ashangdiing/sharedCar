@@ -31,9 +31,9 @@ public class Car  implements Serializable{
 	
 	private	String carId;
 	
-	@Column(nullable=false,columnDefinition="varchar(10) default white")
+	@Column(nullable=false,columnDefinition="varchar(10) default 'white'")
 	private	String Color;
-	@Column(nullable=false,columnDefinition="varchar(40) default BYD")
+	@Column(nullable=false,columnDefinition="varchar(40) default 'BYD'")
 	private	String brand;
 	
 	private LocalDateTime createTime;
