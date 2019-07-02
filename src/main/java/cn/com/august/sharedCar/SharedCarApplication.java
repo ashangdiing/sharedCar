@@ -7,10 +7,12 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
+
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 @SpringBootApplication
 @EnableJpaRepositories("cn.com.august.*.*")
 @EntityScan(basePackages = "cn.com.august.*.*")
- 
+@EnableDubbo
 public class SharedCarApplication {
 	 @Bean
 	    RestTemplate restTemplate() {

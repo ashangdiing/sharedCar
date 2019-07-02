@@ -30,7 +30,7 @@ public class AppUser  implements Serializable{
 	
 		private	String userName;
 		//mappedBy = "car"  关系表示Car类的car字段维护
-		@OneToMany(mappedBy = "appUser",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+		@OneToMany(mappedBy = "appUser",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 		private	List<LtineraryRecord> ltineraryRecords;
 		
 }

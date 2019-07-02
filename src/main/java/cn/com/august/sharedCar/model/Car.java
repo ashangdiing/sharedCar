@@ -40,6 +40,6 @@ public class Car  implements Serializable{
 	private LocalDateTime updateTime;
 	private LocalDateTime buyTime;
 	//一个车会有很多个单子，关系被LtineraryRecords的car属性维护
-	@OneToMany(mappedBy = "car",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToMany(mappedBy = "car",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	private	List<LtineraryRecord> LtineraryRecords;
 }

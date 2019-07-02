@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,11 +37,11 @@ public class LtineraryRecord  implements Serializable{
 	private LocalDateTime updateTime;
 	private LocalDateTime startTime;
 	private LocalDateTime endTime;
-	@ManyToOne(cascade=CascadeType.DETACH,optional=false)
+	@ManyToOne(cascade=CascadeType.DETACH,optional=false,fetch = FetchType.EAGER)
 	@JoinColumn(name = "app_user_id", referencedColumnName = "appUserId")
 	private	AppUser appUser;
 	//一对一关联，不做级联，避免删除这边记录删除另一边,optional=false表示一个单子必须有车对应
-	@ManyToOne(cascade=CascadeType.DETACH,optional=false)
+	@ManyToOne(cascade=CascadeType.DETACH,optional=false,fetch = FetchType.EAGER)
 	//新建car_id与Car类的carId进行关联
 	@JoinColumn(name = "car_id", referencedColumnName = "carId")
 	private	Car car;
